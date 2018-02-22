@@ -8,14 +8,14 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
 
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4 hvr-grow">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
         <div class="card-category">Popular</div>
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
         </div>
         <div class="fa-buttons">
-          <%= link_to '<i class="fas fas-clickable fa-trash"></i>'.html_safe, cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '<i class="fas fas-clickable fa-trash hvr-grow-rotate"></i>'.html_safe, cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
         <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
         <%= link_to(cocktail) do %>
