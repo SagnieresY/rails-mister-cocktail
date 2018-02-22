@@ -1,2 +1,33 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+  <div class="card-description">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+
+<strong>Doses</strong>
+<table>
+  <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cocktail.doses.each do |dose| %>
+      <tr>
+        <td><%= Ingredient.find(dose.ingredient_id).name %></td>
+        <td><%= dose.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Create a Dose', new_cocktail_dose_path(@cocktail) %> |
+<%= link_to 'Back', cocktails_path %>
