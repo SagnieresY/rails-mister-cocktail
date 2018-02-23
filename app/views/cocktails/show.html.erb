@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(@cocktail.photo, height: 300, width: 400, crop: :fill) %>)">
   <div class="card-description">
     <h1><%= @cocktail.name %></h1>
   </div>
@@ -11,18 +11,12 @@
 
 <strong>Doses</strong>
 <table>
-  <thead>
-    <tr>
-      <th>Ingredient</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @cocktail.doses.each do |dose| %>
       <tr>
-        <td><%= Ingredient.find(dose.ingredient_id).name %></td>
         <td><%= dose.description %></td>
+        <td>&nbsp of &nbsp </td>
+        <td><%= Ingredient.find(dose.ingredient_id).name %></td>
       </tr>
     <% end %>
   </tbody>
