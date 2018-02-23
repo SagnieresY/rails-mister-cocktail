@@ -9,7 +9,7 @@
     <% @cocktails.each do |cocktail| %>
 
     <div class="col-xs-12 col-sm-4 grow">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(cocktail.photo, height: 300, width: 400, crop: :fill) %>)">
         <div class="card-category">Popular</div>
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
@@ -26,3 +26,7 @@
     <% end %>
   </div>
 </div>
+
+
+
+
