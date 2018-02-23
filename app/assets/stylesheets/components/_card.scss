@@ -55,3 +55,12 @@
   z-index: 3;
 }
 
+.fas-clickable {
+  opacity: 0.5;
+  color: black;
+}
+
+.fas-clickable:hover {
+  opacity: 1;
+  color: white;
+}
