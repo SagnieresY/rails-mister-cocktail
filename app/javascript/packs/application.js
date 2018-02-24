@@ -8,3 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import "hover.css/css/hover.css";
+import { loadDynamicBannerText } from 'components/banner';
+loadDynamicBannerText();
