@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   resources :doses, only: [ :show, :edit, :update, :destroy ]
 
+  get '/cocktails/search/:query', :to => 'cocktails#search', :as => :search
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -33,6 +33,10 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
+  def search
+    @search_cocktails_results = Cocktail.where(name:params[:search][:query])
+  end
+
   private
 
   def set_cocktail

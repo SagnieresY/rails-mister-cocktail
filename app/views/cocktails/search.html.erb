@@ -1,0 +1,22 @@
+<p>this is the search page</p>
+
+<div class="container">
+  <div class="row">
+    <% @search_cocktails_results.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4 grow">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo.file.nil? ? 'https://source.unsplash.com/random' : cl_image_path(cocktail.photo, height: 300, width: 400, crop: :fill) %>)">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
+        </div>
+        <div class="fa-buttons">
+          <%= link_to '<i class="fas fas-clickable fa-trash hvr-grow-rotate"></i>'.html_safe, cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <%= link_to(cocktail) do %>
+        <div class="card-link"></div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
