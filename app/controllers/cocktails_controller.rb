@@ -34,7 +34,11 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    @search_cocktails_results = Cocktail.where(name:params[:search][:query])
+    @search_cocktails_results = Cocktail.all.select do |cocktail|
+      if cocktail.name.downcase.include?(params[:search][:query].downcase)
+        cocktail
+      end
+    end
   end
 
   private
