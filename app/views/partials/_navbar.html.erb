@@ -5,15 +5,12 @@
   <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
-  <div class="container">
-    <div class="row">
       <%= simple_form_for :search, url: search_path(:search), :method => :get  do |f| %>
-      <%= f.input_field :query, inline_label: 'Search'%>
-      <%= f.submit "Search Cocktailz", :class => "search-button"%>
+      <div class="flexbox-class">
+        <%= f.input_field :query, inline_label: 'Search', :class => "search-field"%>
+        <%= f.submit "Search Cocktailz", :class => "search-button"%>
+      </div>
       <% end %>
-    </div>
-  </div>
-
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">

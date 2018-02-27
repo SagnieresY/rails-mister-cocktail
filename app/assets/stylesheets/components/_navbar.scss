@@ -36,7 +36,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #3d7895;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -76,17 +76,32 @@
   border-top: 1px solid #E6E6E6;
 }
 
-.container {
-text-align: center;
+.search-field {
+  border: 0;
+  border-bottom: 1px solid #3d7895;
 }
 
 .search-button {
-  color: #616668;
+  color: #3d7895;
   background: transparent;
-  border-radius: 3px;
+  border:0;
+  border-bottom: 1px solid #3d7895;
+  height: 29px;
+  // border-radius: 3px;
   &:hover {
     opacity: 0.5;
   }
 }
 
+.flexbox-class {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  .form-group {
+    width: 100%;
+  }
+  .btn-primary {
+    margin-bottom: 16px
+  }
+}
 
